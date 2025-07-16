@@ -55,27 +55,7 @@ def burp_xml_to_sqlmap_request(burp_xml_file, output_dir="sqlmap_requests_from_x
 
     print("\n所有请求转换完成！")
 
----
 
-### **如何使用这个修改后的工具**
-
-1.  **保存代码：** 将上述代码保存为 `.py` 文件，例如 `burp_xml_converter.py`。
-2.  **运行脚本：** 打开您的终端或命令提示符，然后以这种格式运行脚本，将您的 Burp 导出 XML 文件作为第一个参数：
-
-    ```bash
-    python burp_xml_converter.py burp_exported_requests.xml
-    ```
-    *请将 `burp_exported_requests.xml` 替换为您实际的 Burp XML 文件路径。*
-
-    如果您想指定不同的输出目录，可以考虑添加第二个参数，或者让脚本始终输出到默认目录。为了简单起见，当前版本默认输出到 `sqlmap_requests_from_xml` 文件夹。
-
----
-
-### **示例：命令行参数处理**
-
-在 `if __name__ == "__main__":` 块中，我们将修改代码以检查命令行参数的数量。
-
-```python
 if __name__ == "__main__":
     if len(sys.argv) < 2:
         print("用法: python burp_xml_converter.py <burp_exported_xml_file>")
